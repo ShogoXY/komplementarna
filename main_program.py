@@ -1,19 +1,50 @@
 # print ("Program sprawdzający dane w dwóch listach")
 #coding=utf8
-from glowna import list_1, list_2, list_3, list_4
+from glowna import bol_g, wlosy_g, grypa_odpornosc_g,opryszczka_masc_g, opryszcza_odpornosc_g,nogi_g, hemoroidy_masc_g,hemoroidy_czopki_g
+from komplementarna import bol_k, wlosy_k, grypa_odpornosc_k,opryszczka_masc_k, opryszcza_odpornosc_k,nogi_k, hemoroidy_masc_k,hemoroidy_czopki_k
+
+
 import re
 
-for i in range(len(list_1)):
-    list_1[i] = list_1[i].lower()
+for i in range(len(bol_g)):
+    bol_g[i] = bol_g[i].lower()
+for i in range(len(bol_k)):
+    bol_k[i] = bol_k[i].lower()
 
-for i in range(len(list_2)):
-    list_2[i] = list_2[i].lower()
+for i in range(len(wlosy_g)):
+    wlosy_g[i] = wlosy_g[i].lower()
+for i in range(len(wlosy_k)):
+    wlosy_k[i] = wlosy_k[i].lower()
 
-for i in range(len(list_3)):
-    list_3[i] = list_3[i].lower()
-for i in range(len(list_4)):
-    list_4[i] = list_4[i].lower()
+for i in range(len(grypa_odpornosc_g)):
+    grypa_odpornosc_g[i] = grypa_odpornosc_g[i].lower()
+for i in range(len(grypa_odpornosc_k)):
+    grypa_odpornosc_k[i] = grypa_odpornosc_k[i].lower()
 
+for i in range(len(opryszczka_masc_g)):
+    opryszczka_masc_g[i] = opryszczka_masc_g[i].lower()
+for i in range(len(opryszczka_masc_k)):
+    opryszczka_masc_k[i] = opryszczka_masc_k[i].lower()
+
+for i in range(len(opryszcza_odpornosc_g)):
+    opryszcza_odpornosc_g[i] = opryszcza_odpornosc_g[i].lower()
+for i in range(len(opryszcza_odpornosc_k)):
+    opryszcza_odpornosc_k[i] = opryszcza_odpornosc_k[i].lower()
+
+for i in range(len(nogi_g)):
+    nogi_g[i] = nogi_g[i].lower()
+for i in range(len(nogi_k)):
+    nogi_k[i] = nogi_k[i].lower()
+
+for i in range(len(hemoroidy_masc_g)):
+    hemoroidy_masc_g[i] = hemoroidy_masc_g[i].lower()
+for i in range(len(hemoroidy_masc_k)):
+    hemoroidy_masc_k[i] = hemoroidy_masc_k[i].lower()
+
+for i in range(len(hemoroidy_czopki_g)):
+    hemoroidy_czopki_g[i] = hemoroidy_czopki_g[i].lower()
+for i in range(len(hemoroidy_czopki_k)):
+    hemoroidy_czopki_k[i] = hemoroidy_czopki_k[i].lower()
 
 
 
@@ -25,8 +56,8 @@ def wybrana_lista() :
         try:
             print("podaj glowny")
             interupt_glowny=str(input().lower())
-            lista_nowa=list((list_1,list_3))
-            lista_nowa2=list((list_2,list_4))
+            lista_nowa=list((bol_g,wlosy_g, grypa_odpornosc_g,opryszcza_odpornosc_g,opryszczka_masc_g,nogi_g,hemoroidy_masc_g,hemoroidy_czopki_g))
+            lista_nowa2=list((bol_k,wlosy_k,grypa_odpornosc_k,opryszcza_odpornosc_k,opryszczka_masc_k,nogi_k,hemoroidy_masc_k,hemoroidy_czopki_k))
             i=0
             l=0
 
