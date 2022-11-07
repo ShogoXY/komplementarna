@@ -1,7 +1,7 @@
 # print ("Program sprawdzający dane w dwóch listach")
 #coding=utf8
-from glowna import bol_g, wlosy_g, grypa_odpornosc_g,opryszczka_masc_g, opryszcza_odpornosc_g,nogi_g, hemoroidy_masc_g,hemoroidy_czopki_g
-from komplementarna import bol_k, wlosy_k, grypa_odpornosc_k,opryszczka_masc_k, opryszcza_odpornosc_k,nogi_k, hemoroidy_masc_k,hemoroidy_czopki_k
+from glowna import bol_g, wlosy_g, grypa_odpornosc_g,opryszczka_masc_g, opryszcza_odpornosc_g, nogi_g, hemoroidy_masc_g, hemoroidy_czopki_g, furagina_zurawina_g,alergia_calcium_g,alergia_inne_g, antybiotyk_g,biegunka_elektrolity_g
+from komplementarna import bol_k, wlosy_k, grypa_odpornosc_k, opryszczka_masc_k, opryszcza_odpornosc_k, nogi_k, hemoroidy_masc_k, hemoroidy_czopki_k, furagina_zurawina_k,alergia_calcium_k,alergia_inne_k, antybiotyk_k, biegunka_elektrolity_k
 
 
 import re
@@ -46,6 +46,35 @@ for i in range(len(hemoroidy_czopki_g)):
 for i in range(len(hemoroidy_czopki_k)):
     hemoroidy_czopki_k[i] = hemoroidy_czopki_k[i].lower()
 
+for i in range(len(furagina_zurawina_g)):
+    furagina_zurawina_g[i] = furagina_zurawina_g[i].lower()
+for i in range(len(furagina_zurawina_k)):
+    furagina_zurawina_k[i] = furagina_zurawina_k[i].lower()
+
+for i in range(len(alergia_calcium_g)):
+    alergia_calcium_g[i] = alergia_calcium_g[i].lower()
+for i in range(len(alergia_calcium_k)):
+    alergia_calcium_k[i] = alergia_calcium_k[i].lower()
+
+for i in range(len(alergia_inne_g)):
+    alergia_inne_g[i] = alergia_inne_g[i].lower()
+for i in range(len(alergia_inne_k)):
+    alergia_inne_k[i] = alergia_inne_k[i].lower()
+
+for i in range(len(antybiotyk_g)):
+    antybiotyk_g[i] = antybiotyk_g[i].lower()
+for i in range(len(antybiotyk_k)):
+    antybiotyk_k[i] = antybiotyk_k[i].lower()
+
+for i in range(len(biegunka_elektrolity_g)):
+    biegunka_elektrolity_g[i] = biegunka_elektrolity_g[i].lower()
+for i in range(len(biegunka_elektrolity_k)):
+    biegunka_elektrolity_k[i] = biegunka_elektrolity_k[i].lower()
+
+
+
+
+
 
 
 def wybrana_lista() :
@@ -56,8 +85,8 @@ def wybrana_lista() :
         try:
             print("podaj glowny")
             interupt_glowny=str(input().lower())
-            lista_nowa=list((bol_g,wlosy_g, grypa_odpornosc_g,opryszcza_odpornosc_g,opryszczka_masc_g,nogi_g,hemoroidy_masc_g,hemoroidy_czopki_g))
-            lista_nowa2=list((bol_k,wlosy_k,grypa_odpornosc_k,opryszcza_odpornosc_k,opryszczka_masc_k,nogi_k,hemoroidy_masc_k,hemoroidy_czopki_k))
+            lista_nowa=list((bol_g,wlosy_g, grypa_odpornosc_g,opryszczka_masc_g,opryszcza_odpornosc_g,nogi_g,hemoroidy_masc_g,hemoroidy_czopki_g, furagina_zurawina_g,alergia_calcium_g,alergia_inne_g,antybiotyk_g,biegunka_elektrolity_g ))
+            lista_nowa2=list((bol_k,wlosy_k,grypa_odpornosc_k,opryszczka_masc_k,opryszcza_odpornosc_k,nogi_k,hemoroidy_masc_k,hemoroidy_czopki_k,furagina_zurawina_k,alergia_calcium_k,alergia_inne_k,antybiotyk_k,biegunka_elektrolity_k ))
             i=0
             l=0
 
