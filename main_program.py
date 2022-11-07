@@ -113,12 +113,12 @@ def wybrana_lista() :
                 newlist = list(filter(r.match, szukaj)) # Read Note below
                 print(*newlist,sep='\n')
                 print ("\n")
-                root = Tk()
-                t = Text(root)
-                for x in newlist:
-                    t.insert(END, x + '\n')
-                t.pack()
-                root.mainloop()
+                # root = Tk()
+                # t = Text(root)
+                # for x in newlist:
+                #     t.insert(END, x + '\n')
+                # t.pack()
+                # root.mainloop()
 
                 
                 if newlist:  
