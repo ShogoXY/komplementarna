@@ -5,6 +5,12 @@ from komplementarna import bol_k, wlosy_k, grypa_odpornosc_k, opryszczka_masc_k,
 
 
 import re
+from tkinter import * 
+ 
+
+
+
+
 
 for i in range(len(bol_g)):
     bol_g[i] = bol_g[i].lower()
@@ -107,6 +113,14 @@ def wybrana_lista() :
                 newlist = list(filter(r.match, szukaj)) # Read Note below
                 print(*newlist,sep='\n')
                 print ("\n")
+                root = Tk()
+                t = Text(root)
+                for x in newlist:
+                    t.insert(END, x + '\n')
+                t.pack()
+                root.mainloop()
+
+                
                 if newlist:  
                     interupt="coś czego nie ma"
 
@@ -127,3 +141,4 @@ def wybrana_lista() :
 
 
 wybrana_lista()
+
