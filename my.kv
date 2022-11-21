@@ -1,0 +1,84 @@
+<P>
+    Label:
+        text: "Zła wartość lub \n Brak wartości"
+        size_hint: 0.6, 0.2
+        font_size :34
+        pos_hint: {"x":0.2, "top":0.7}
+
+
+<fscreen>
+    Label:
+	    text: 'Podaj główną'
+	    font_size: root.height*0.05
+	    size: root.width*0.4, root.height*0.5
+	    pos: root.width*0.3, root.height*0.5
+
+	TextInput:
+	    id: in_first
+	    text: 'glówna'
+	    font_size: root.height*0.05
+	    size: root.width*0.4, root.height*0.1
+        pos: root.width*0.3, root.height*0.5
+
+	Button:
+        text: 'Sprawdź'
+        size: root.width*0.2, root.height*0.1
+        pos: root.width*0.4, root.height*0.2
+        on_press: root.change()
+
+
+	Label:
+        id: lb
+        text: ''
+        font_size: root.height*0.05
+        size: root.width*0.4, root.height*0.35
+        pos: root.width*0.3, root.height*0.5
+
+
+	Button:
+        text: 'EXIT'
+        size: root.width*0.2, root.height*0.1
+        pos: root.width*0.4, root.height*0.3
+        on_press: root.change_color()
+
+
+
+<secscreen>
+    Label:
+        text: 'this is the second screen'
+        font_size: root.height*0.05
+        size: root.width*0.4, root.height*0.5
+        pos: root.width*0.3, root.height*0.5
+
+    TextInput:
+        id: ti_wynik_glowny
+        text: 'this'
+        font_size: root.height*0.02
+        size: root.width*0.4, root.height*0.1
+        pos: root.width*0.3, root.height*0.5
+
+    TextInput:
+        id: ti_komplementarna
+        text: 'podaj komplementarną'
+        font_size: root.height*0.02
+        size: root.width*0.4, root.height*0.1
+        pos: root.width*0.3, root.height*0.61
+
+    Button:
+        text: 'Powrót'
+        size: root.width*0.2, root.height*0.1
+        pos: root.width*0.4, root.height*0.2
+        on_press: root.change()
+
+    Label:
+        id: lb
+        text: ''
+        font_size: root.height*0.05
+        size: root.width*0.4, root.height*0.35
+        pos: root.width*0.3, root.height*0.5
+
+    Button:
+        text: 'EXIT'
+        size: root.width*0.2, root.height*0.1
+        pos: root.width*0.4, root.height*0.3
+        on_press: root.change_color()
