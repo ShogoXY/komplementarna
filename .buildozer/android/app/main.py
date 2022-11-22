@@ -8,6 +8,7 @@ from kivy.uix.popup import Popup
 from kivy.core.window import Window
 
 
+
 Window.softinput_mode="below_target"
 
 
@@ -140,7 +141,6 @@ class secscreen(Widget):
     def exit(self):
         theapp.stop()
 
-
 class theapp(App):
     def build(self):
         self.screenm = ScreenManager()
@@ -155,6 +155,7 @@ class theapp(App):
         self.screenm.add_widget(screen)
 
         return self.screenm
+    
 
 
 if __name__ == "__main__":

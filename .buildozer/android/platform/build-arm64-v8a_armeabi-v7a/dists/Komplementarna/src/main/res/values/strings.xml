@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Komplementarna</string>
-    <string name="private_version">69d3a9a65cbc3ab953831302560dba0574aeee95</string>
+    <string name="private_version">fddb67b912dd8614e25d7bdb582935903ca154b6</string>
     <string name="presplash_color">#000000</string>
     <string name="urlScheme">kivy</string>
 </resources>
