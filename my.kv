@@ -8,22 +8,23 @@
 
 <fscreen>
     Label:
-	    text: 'Podaj główną'
+	    text: 'Podaj lek z głównej gałęzi'
 	    font_size: root.height*0.05
 	    size: root.width*0.4, root.height*0.5
 	    pos: root.width*0.3, root.height*0.5
 
 	TextInput:
 	    id: in_first
-	    text: 'glówna'
-	    font_size: root.height*0.05
-	    size: root.width*0.4, root.height*0.1
+	    text: ''
+        multiline:False
+	    font_size: root.height*0.045
+	    size: root.width*0.4, root.height*0.07
         pos: root.width*0.3, root.height*0.5
 
 	Button:
         text: 'Sprawdź'
         size: root.width*0.2, root.height*0.1
-        pos: root.width*0.4, root.height*0.2
+        pos: root.width*0.75, root.height*0.05
         on_press: root.change()
 
 
@@ -35,40 +36,73 @@
         pos: root.width*0.3, root.height*0.5
 
 
-	Button:
+    Button:
         text: 'EXIT'
         size: root.width*0.2, root.height*0.1
-        pos: root.width*0.4, root.height*0.3
-        on_press: root.change_color()
+        pos: root.width*0.05, root.height*0.05
+        on_press: root.exit()
 
 
 
 <secscreen>
     Label:
-        text: 'this is the second screen'
-        font_size: root.height*0.05
-        size: root.width*0.4, root.height*0.5
-        pos: root.width*0.3, root.height*0.5
+        text: 'Główny'
+        font_size: root.height*0.03
+        size: root.width*0.4, root.height*0.55
+        pos: root.width*0.07, root.height*0.7
+    Label:
+        text: 'Komplementarnie'
+        font_size: root.height*0.03
+        size: root.width*0.4, root.height*0.55
+        pos: root.width*0.52, root.height*0.7
 
-    TextInput:
-        id: ti_wynik_glowny
-        text: 'this'
+    ScrollView:
+        size: root.width*0.45, root.height*0.65
+        pos: root.width*0.02, root.height*0.3
+        Label:
+    
+            size_hint_y:None
+            height:self.texture_size[1]
+            id: lb_wynik_glowny
+            text: 'Tutaj pojawi się wynik dla komplementarności'
+            text_size:self.width, None
+            font_size: root.height*0.02
+
+    ScrollView:
+        size: root.width*0.46, root.height*0.65
+        pos: root.width*0.52, root.height*0.3
+        Label:
+    
+            size_hint_y:None
+            height:self.texture_size[1]
+            id: lb_komplementarna
+            text: 'Tutaj pojawi się wynik dla komplementarności'
+            text_size:self.width, None
+            font_size: root.height*0.02
+    
+    Label:
+        text: 'Podaj komplementarną'
         font_size: root.height*0.02
-        size: root.width*0.4, root.height*0.1
-        pos: root.width*0.3, root.height*0.5
+        pos: root.width*0.45, root.height*0.21
 
     TextInput:
         id: ti_komplementarna
-        text: 'podaj komplementarną'
+        text: ''
         font_size: root.height*0.02
-        size: root.width*0.4, root.height*0.1
-        pos: root.width*0.3, root.height*0.61
+        size: root.width*0.4, root.height*0.05
+        pos: root.width*0.3, root.height*0.2
 
     Button:
         text: 'Powrót'
         size: root.width*0.2, root.height*0.1
-        pos: root.width*0.4, root.height*0.2
+        pos: root.width*0.75, root.height*0.05
         on_press: root.change()
+
+    Button:
+        text: 'Sprawdź'
+        size: root.width*0.2, root.height*0.1
+        pos: root.width*0.4, root.height*0.05
+        on_press: root.change_color()
 
     Label:
         id: lb
@@ -80,5 +114,5 @@
     Button:
         text: 'EXIT'
         size: root.width*0.2, root.height*0.1
-        pos: root.width*0.4, root.height*0.3
-        on_press: root.change_color()
+        pos: root.width*0.05, root.height*0.05
+        on_press: root.exit()

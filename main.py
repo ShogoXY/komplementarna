@@ -9,7 +9,7 @@ Builder.load_file('my.kv')
 zmiana_liter()
 
 def wybrana_lista(interupt_glowny):
-
+    global lista_nowa2
     print("podaj glowny")
     interupt_glowny = str(theapp.fscreen.ids.in_first.text)
     lista_nowa = list(
@@ -41,7 +41,7 @@ def wybrana_lista(interupt_glowny):
         newlist = list(filter(r.match, szukaj))  # Read Note below
         gotowe=print(*newlist, sep='\n')
         print(gotowe)
-        theapp.secscreen.ids.ti_wynik_glowny.text = str('\n\n'.join(map(str, newlist)))
+        theapp.secscreen.ids.lb_wynik_glowny.text = str('\n'.join(map(str, newlist)))
         print("\n")
 
         #except:
@@ -51,22 +51,25 @@ def wybrana_lista(interupt_glowny):
 
 
 
-def wynik_komplemanatrny():
+def wynik_komplemanatrny(interupt):
 
     if newlist:
-        interupt = "coś czego nie ma"
-
-        while interupt != "":
-            print("podaj komplementarna")
-            interupt = input().lower()
-            r = re.compile(".*" + interupt)
-            if interupt != "":
-                print("\n")
-                newlist2 = list(filter(r.match, szukaj2))  # Read Note below
-                print(*newlist2, sep='\n')
-                print("\n")
-                if not newlist2:
-                    print("Brak,podaj poprawną warotść")
+        
+        # print("to jest I ",i, "to jest szukaj2 ", szukaj2)
+        # if interupt != "":
+        print("podaj komplementarna")
+        interupt = theapp.secscreen.ids.ti_komplementarna.text
+        r = re.compile(".*" + interupt)
+        if interupt != "":
+            print("\n")
+            newlist2 = list(filter(r.match, szukaj2))  # Read Note below
+            print(*newlist2, sep='\n')
+            theapp.secscreen.ids.lb_komplementarna.text = str('\n'.join(map(str, newlist2)))
+            print("\n")
+            if not newlist2:
+                theapp.secscreen.ids.ti_komplementarna.text = ""
+                Popup(size_hint=(None, None), size=(400, 200), title="BŁĄD", auto_dismiss=True,
+                      content=show).open()
 
 class P(FloatLayout):
     pass
@@ -97,9 +100,10 @@ class fscreen(Widget):
                 theapp.screenm.current = 'first'
 
 
-    def change_color(self):
-        theapp.stop()
+    
 
+    def exit(self):
+        theapp.stop()
 
 
 class secscreen(Widget):
@@ -110,6 +114,24 @@ class secscreen(Widget):
         theapp.screenm.current = 'first'
 
     def change_color(self):
+        # theapp.stop()
+        show=P()
+        if True:
+
+            try:
+                wynik_komplemanatrny(theapp.secscreen.ids.ti_komplementarna.text)
+                if theapp.secscreen.ids.ti_komplementarna.text == "":
+                    Popup(size_hint=(None,None), size=(400,200), title="BŁĄD", auto_dismiss=True, content=show).open()
+                    theapp.secscreen.ids.ti_komplementarna.text = "nie ma"
+                    # theapp.screenm.current = 'second'
+                theapp.secscreen.ids.ti_komplementarna.text = ""
+
+            except:
+                theapp.secscreen.ids.ti_komplementarna.text = ""
+                Popup(size_hint=(None, None), size=(400, 200), title="BŁĄD", auto_dismiss=True,
+                      content=show).open()
+                # theapp.screenm.current = 'first'
+    def exit(self):
         theapp.stop()
 
 
